@@ -9,6 +9,6 @@ class role extends Model
 {
     use HasFactory;
     public function utilisateurs(){
-       return $this->hasMany(utilisateur::class);
+       return $this->hasMany(utilisateur::class,"role_id");
     }
 }

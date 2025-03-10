@@ -11,7 +11,7 @@ class courrier extends Model
     protected $fillable=['date','num_order_annuel','date_lettre','num_lettre','designation_destinataire'
     ,'analyse_affaire','date_reponse', 'num_reponse','utilisateur_id','statut_id','fichier_id','type_courrier_id'];
     public function utilisateurs(){
-        return $this->belongsTo(utilisateur::class);
+        return $this->belongsTo(utilisateur::class,"utilisateur_id");
     }
     public function fichiers(){
         return $this->belongsTo(fichier::class);

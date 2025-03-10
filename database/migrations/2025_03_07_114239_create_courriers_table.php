@@ -23,7 +23,7 @@ class CreateCourriersTable extends Migration
             $table->date('date_reponse')->nullable();
             $table->string('num_reponse')->nullable();
             $table->timestamps();
-            $table->foreignId('utilisateur_id')->constrained('utilisateurs')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('statut_id')->constrained('statuts')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('fichier_id')->constrained('fichiers')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('type_courrier_id')->constrained('type_courriers')->cascadeOnDelete()->cascadeOnUpdate();

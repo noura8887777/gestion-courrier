@@ -15,7 +15,7 @@ class CreateAffectationsTable extends Migration
             $table->boolean('reponse')->nullable();
             $table->integer('duree_reponse')->nullable();
             $table->timestamps();
-            $table->foreignId('utilisateur_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+                $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('courrier_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             
         });

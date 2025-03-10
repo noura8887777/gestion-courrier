@@ -16,9 +16,9 @@ class CourrierFactory extends Factory
            'analyse_affaire' => $this->faker->paragraph,
            'date_reponse' => $this->faker->optional()->date,
            'num_reponse' => $this->faker->optional()->numberBetween(100, 999),
-           'utilisateur_id' => \App\Models\utilisateur::factory(),
-           'statut_id' => \App\Models\statut::factory(),
-           'fichier_id' => \App\Models\fichier::factory(),
+           'user_id' => \App\Models\User::factory(),
+           'statut_id' => \App\Models\Statut::factory(),
+           'fichier_id' => \App\Models\Fichier::factory(),
            'type_courrier_id'=>\App\Models\TypeCourrier::factory()
         ];
     }

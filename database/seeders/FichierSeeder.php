@@ -9,6 +9,6 @@ class FichierSeeder extends Seeder
 {
     public function run()
     {
-        fichier::factory()->count(10)->create();
+        Fichier::factory()->count(10)->create();
     }
 }

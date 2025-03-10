@@ -9,6 +9,6 @@ class StatutSeeder extends Seeder
 {
     public function run()
     {
-        statut::factory()->count(3)->create();
+        Statut::factory()->count(3)->create();
     }
 }

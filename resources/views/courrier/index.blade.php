@@ -7,11 +7,8 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body"> 
-        
-        
-        <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
-        <thead>
-          <table>
+        <div class="row"><div class="col-sm-12">
+          <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr role="row">
                 <th>#</th>
@@ -26,8 +23,8 @@
               </tr>
         </thead>
         <tbody>
-        <tr>
           @foreach ($listCourriers as $courrier)
+          <tr>
              <td>{{$courrier->id}}</td>
              <td>{{$courrier->num_order_annuel}}</td>
              <td>{{$courrier->date}}</td>
@@ -36,13 +33,12 @@
              <td>{{$courrier->analyse_affaire}}</td>
              <td>{{$courrier->date_reponse}}</td>
              <td>{{$courrier->num_reponse}}</td>
-
-             <td></td> 
+             <td>
+              <a class="d-flex" href="{{route('courrier.show',[$courrier->id])}}">voir plus..</a>
+              <a href="{{ route('courrier.edit', $courrier->id) }}" class="btn btn-primary">Modifier</a>
+            </td>
+            </tr> 
           @endforeach
-         
-          
-        </tr>
-       
     </tbody>
         <tfoot>
         

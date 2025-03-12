@@ -10,9 +10,9 @@ class Affectation extends Model
     use HasFactory;
     protected $fillable=['user_id','courrier_id','reponse','duree_reponse'];
     public function users(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
      }
      public function courriers(){
-        return $this->belongsTo(Courrier::class);
+        return $this->belongsTo(Courrier::class,'courrier_id');
      }
 }

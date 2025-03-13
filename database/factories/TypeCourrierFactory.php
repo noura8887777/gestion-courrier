@@ -22,7 +22,7 @@ class TypeCourrierFactory extends Factory
     public function definition()
     {
         return [
-            'nom_type' => $this->faker->word,
+            'nom_type' => $this->faker->randomElement(['Courrier Informatif','Courrier Exécutif']),
         ];
     }
 }

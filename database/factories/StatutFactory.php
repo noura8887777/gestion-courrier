@@ -8,7 +8,7 @@ class StatutFactory extends Factory
     public function definition()
     {
         return [
-            'nom_statut' => $this->faker->randomElement(["en cours","en cours"]),
+            'nom_statut' => $this->faker->randomElement(["en cours","termine"]),
         ];
     }
 }

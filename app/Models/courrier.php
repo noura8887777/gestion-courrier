@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Courrier extends Model
-{
+{ 
+    use SoftDeletes;
+    protected $dates=['deleted_at'];
     use HasFactory;
     protected $fillable=['date','num_order_annuel','date_lettre','num_lettre','designation_destinataire'
     ,'analyse_affaire','date_reponse', 'num_reponse','user_id','statut_id','fichier_id','type_courrier_id'];

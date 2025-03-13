@@ -30,11 +30,25 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="../../index3.html" class="nav-link">Home</a>
+          <a href="{{route('courrier.index')}}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
+          <a class="nav-link" href="{{ route('courrier.create') }}">Nouveau Courrier</a>
+        {{-- </li class="nav-item d-none d-sm-inline-block">
+        <li>
+          <a  class="nav-link" href="{{ route('courrier.edit', $courrier->id) }}" class="btn btn-primary">Modifier</a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block" >
+          <a class="nav-link" href="{{route('courrier.show',$id)}}">voir plus..</a>
+        </li> --}}
+        {{-- <li class="nav-item d-none d-sm-inline-block">
+          <form action="{{ route('courrier.destroy',$courrier->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="nav-link"  class="btn btn-danger" type="submit">suprimer</button>
+          </form>
+        </li> --}}
+        
       </ul>
   
       <!-- SEARCH FORM -->
@@ -155,7 +169,7 @@
       <!-- Brand Logo -->
       <a href="../../index3.html" class="brand-link">
         <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Gestion Courrier </span>
       </a>
   
       <!-- Sidebar -->
@@ -301,11 +315,12 @@
 <script>
   $(function () {
     $("#example1").DataTable({
+      "paging": false,
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
-      "paging": true,
+      "paging": false,
       "lengthChange": false,
       "searching": false,
       "ordering": true,

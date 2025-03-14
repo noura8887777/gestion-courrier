@@ -51,13 +51,13 @@
                         @enderror
                     </div>
 
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label for="fichier">Fichier du courrier<span class="text-danger">*</span></label>
-                        <input type="file" name="fichier" id="fichier" class="form-control is-invalid r" required>
+                        <input type="file" name="fichier" class="form-control is-invalid" required>
                         @error('fichier')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
-                    </div> --}}
+                    </div>
                 </div>
 
                 <div class="col-md-6">

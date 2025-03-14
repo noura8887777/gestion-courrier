@@ -63,6 +63,26 @@
                 <th>Statut</th>
                 <td>{{$listcourrier->statuts->nom_statut}}</td>
               </tr>
+              <tr>
+                <th>Fichier</th>
+                <td>
+                  @if($listcourrier->fichier)
+                  <a href="{{ route('courrier.showFile', $listcourrier->id) }}" class="btn btn-sm btn-info" target="_blank"  download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Télécharger le fichier
+                  </a>
+              @else
+                  <span class="text-muted">Aucun fichier</span>
+              @endif
+                
+                </td>
+                  
+                <td>
+                  {{-- <a _blank href="{{url("file/".$listcourrier->fichier_id)}}"> file</a> --}}
+                  {{-- <a href="{{url("file/".$listcourrier->fichier_id)}}" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> Télécharger le fichier
+                </a> --}}
+                </td>
+              </tr>
             </table>
           </div>
           @if( $listcourrier->affectations->count()>0)
@@ -85,13 +105,17 @@
                   <td>{{$affectation->duree_reponse }} jours</td>
                   <td>{{$affectation->reponse == 1 ? 'true' : 'false' }}</td>
                 
-                  
                 </tr>
+               
+                
                 @endforeach
+
               </tbody>
+
             </table>
           </div>
           @endif
+          
         </div>
       </div>
     </div>

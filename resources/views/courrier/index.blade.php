@@ -20,11 +20,11 @@
                 <th>Analyse Affaire</th>
                 <th>Date Reponse</th>
                 <th>Num Reponse</th>
+                <th>Actions</th>
               </tr>
         </thead>
         <tbody>
           @foreach ($listCourriers as $courrier)
-
           <tr>
              <td>{{$courrier->id}}</td>
              <td>{{$courrier->num_order_annuel}}</td>
@@ -34,14 +34,28 @@
              <td>{{ Str::limit($courrier->analyse_affaire, 27) }}</td>
              <td>{{$courrier->date_reponse}}</td>
              <td>{{$courrier->num_reponse}}</td>
+             <td>
+                <a href="{{ route('courrier.show', $courrier->id) }}" class="btn btn-sm btn-primary">
+                    <i class="fas fa-eye"></i>
+                </a>
+                <a href="{{ route('courrier.edit', $courrier->id) }}" class="btn btn-sm btn-warning">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <form action="{{ route('courrier.destroy', $courrier->id) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce courrier ?')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+                
+             </td>
             </tr> 
-            
           @endforeach
-    </tbody>
-    {{$listCourriers->links()}}
+        </tbody>
+        {{$listCourriers->links()}}
         <tfoot>
-        
-    </tfoot>
+        </tfoot>
       </table></div></div>
       </div>
     </div>

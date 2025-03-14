@@ -3,7 +3,9 @@
 use App\Http\Controllers\courrierController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Models\Fichier;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,20 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::resource('courrier',courrierController::class);
+Route::resource('courrier',courrierController::class);
+// Route::get('file/{fichier_id}', function ($fichier_id) {
+//         // Check if the file exists in the public directory
+//         //dd($nom_fichier);
+//         $fichier=Fichier::where('id','=',$fichier_id)->first();
+//         if (Storage::disk('public')->exists($fichier->chemin)) {
+//             return response()->file(storage_path("app/public/".$fichier->chemin));
+//         }
+    
+//         // If the file doesn't exist, you can return a 404 response
+//         abort(404, 'File not found');
+//     });
 });
+
+Route::get('/courrier/{id}/file', [App\Http\Controllers\courrierController::class, 'showFile'])->name('courrier.showFile');
+
 require __DIR__.'/auth.php';

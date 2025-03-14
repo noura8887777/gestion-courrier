@@ -16,7 +16,7 @@ class Courrier extends Model
     public function users(){
         return $this->belongsTo(User::class,'user_id');
     }
-    public function fichiers(){
+    public function fichier(){
         return $this->belongsTo(Fichier::class,'fichier_id');
     }
     public function statuts(){
